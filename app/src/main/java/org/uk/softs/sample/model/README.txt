@@ -1,0 +1,1 @@
+// Put any generic models used within the app here at this level. Or use specific package (see README of relevant folders).

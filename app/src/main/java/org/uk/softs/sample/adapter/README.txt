@@ -1,0 +1,1 @@
+// Put any adapters here, i.e. listview, recyclerview, viewpager etc.

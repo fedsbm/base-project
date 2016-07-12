@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="Body1" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/black1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="typeface">@string/font_light</item>
+    </style>
+
+    <style name="Body2" parent="@style/Body1">
+        <item name="typeface">@string/font_regular</item>
+    </style>
+
+    <style name="Body3" parent="@style/Body1">
+        <item name="typeface">@string/font_semibold</item>
+    </style>
+
+    <style name="Body4" parent="@style/Body1">
+        <item name="typeface">@string/font_bold</item>
+    </style>
+
+    <style name="Body5" parent="@style/Body4">
+        <item name="android:textSize">44sp</item>
+    </style>
+
+</resources>

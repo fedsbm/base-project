@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Sample Android</string>
+    <string name="activity_title_main">Sample Android</string>
+    <string name="activity_title_show_random_number">Random number</string>
+    <string name="activity_title_retrofit">Request Example</string>
+    <string name="main_version_heading">Version: </string>
+    <string name="main_dev_build_msg">This is a dev build</string>
+    <string name="main_button_show_random_number">Show a random number</string>
+    <string name="main_button_retrofit_request_example">Retrofit request example</string>
+
+    <!-- Error msgs -->
+    <string name="error_no_network_title">No network&#8230;?</string>
+    <string name="error_no_network_msg">Cannot connect to the network. Please check your network settings and try again.</string>
+    <string name="error_generic_title">Something\'s gone wrong&#8230;</string>
+    <string name="error_generic_msg">Please try again later.</string>
+    <string name="error_login_title">Incorrect</string>
+    <string name="error_login_msg">The password  or  email you entered is incorrect. Please try again.</string>
+    <string name="error_generic_credentials">Password or Email is incorrect. Please try again.</string>
+</resources>

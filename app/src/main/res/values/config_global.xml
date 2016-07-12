@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--TODO: Update URLS-->
+
+    <!--URLs-->
+    <string name="staging_base_url">http://example.com</string>
+    <string name="live_base_url">http://jsonplaceholder.typicode.com</string>
+    <string name="production_base_url">http://example.com</string>
+</resources>

@@ -1,0 +1,1 @@
+// Put any viewholders used by apapters here i.e. for a listview etc.

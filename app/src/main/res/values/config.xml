@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+    <!-- Please note, these values should be customised in each flavour own config.xml
+    No value should be defined here -->
+    <!--<bool name="dev_build">false</bool>-->
+    <!--<string name="base_url">http://some.live.url</string>-->
+
+</resources>

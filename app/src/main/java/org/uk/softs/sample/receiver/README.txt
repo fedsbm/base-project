@@ -1,0 +1,1 @@
+// Put any standalone receiver classes here.

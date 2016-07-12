@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+}
+
+android {
+
+    def defaultApplicationId = "org.uk.softs.sampleandroid"
+    
+    def defaultVersionName = "0.0.1"
+    def defaultVersionCode = 1 // This will be overidden by the build number on the build server
+
+    def buildNumber = System.getenv("BUILD_NUMBER")
+    if (buildNumber == null) {
+        buildNumber = 'local'
+    } else {
+        defaultVersionCode = Integer.parseInt(buildNumber)
+    }
+
+    def buildNumberSuffix = " (" + buildNumber + ")"
+
+    compileSdkVersion 23
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 23
+        applicationId defaultApplicationId
+        versionCode defaultVersionCode
+        versionName defaultVersionName
+    }
+
+    signingConfigs {
+        debug {
+            storeFile rootProject.file("keystore/debug.keystore")
+        }
+
+        release {
+            storeFile rootProject.file("keystore/release.keystore")
+            storePassword System.getenv("STORE_PASSWORD")
+            keyAlias "e_Man"
+            keyPassword System.getenv("KEY_PASSWORD")
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    rootProject.file('config/proguard/proguard-rules.pro'),
+                    rootProject.file('config/proguard/libraries/proguard-gson.pro')
+        }
+    }
+
+    productFlavors {
+        production {
+            versionName defaultVersionName + buildNumberSuffix
+        }
+
+        devLive {
+            versionName defaultVersionName + "-DEV-LIVE" + buildNumberSuffix
+            applicationId defaultApplicationId + ".dev.live"
+        }
+
+        devStaging {
+            versionName defaultVersionName + "-DEV-STAGING" + buildNumberSuffix
+            applicationId defaultApplicationId + ".dev.staging"
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    apply from: rootProject.file('config/checkstyle/checkstyle.gradle')
+}

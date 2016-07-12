@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/general_margin"
+        android:paddingLeft="@dimen/general_margin_medium"
+        android:paddingRight="@dimen/general_margin_medium"
+        android:paddingTop="@dimen/general_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <org.uk.softs.sample.view.fontview.FontTextView
+                style="@style/Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/general_margin_small"
+                android:text="@string/main_version_heading" />
+
+            <org.uk.softs.sample.view.fontview.FontTextView
+                android:id="@+id/main_version_value_text_view"
+                style="@style/Body3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="0.0.1" />
+        </LinearLayout>
+
+        <org.uk.softs.sample.view.fontview.FontButton
+            android:id="@+id/main_show_random_number_button"
+            style="@style/Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/general_margin"
+            android:text="@string/main_button_show_random_number"
+            android:textColor="@color/white1" />
+
+        <org.uk.softs.sample.view.fontview.FontButton
+            android:id="@+id/main_retrofit_button"
+            style="@style/Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/general_margin"
+            android:text="@string/main_button_retrofit_request_example"
+            android:textColor="@color/white1" />
+
+        <org.uk.softs.sample.view.fontview.FontTextView
+            android:id="@+id/main_dev_build_msg_text_view"
+            style="@style/Body3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:text="@string/main_dev_build_msg" />
+
+    </LinearLayout>
+
+</LinearLayout>
