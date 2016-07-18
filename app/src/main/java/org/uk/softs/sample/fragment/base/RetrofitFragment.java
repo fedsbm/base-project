@@ -5,9 +5,6 @@ import android.app.Activity;
 import org.uk.softs.sample.activity.base.RetrofitActivity;
 import org.uk.softs.sample.api.RetrofitService;
 
-/**
- * Created by ash.mosaheb on 11/08/2015.
- */
 public abstract class RetrofitFragment extends BaseFragment {
 
     private RetrofitService mRetrofitService;
