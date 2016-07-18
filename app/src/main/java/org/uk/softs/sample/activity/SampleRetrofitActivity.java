@@ -4,14 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-
-import java.util.List;
 
 import org.uk.softs.sample.R;
 import org.uk.softs.sample.activity.base.RetrofitActivity;
 import org.uk.softs.sample.model.api.SampleResponseData;
 import org.uk.softs.sample.model.api.SampleSendRetrofitData;
+
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,6 +24,7 @@ import retrofit2.Response;
 public class SampleRetrofitActivity extends RetrofitActivity {
 
     private TextView mResponseTextView;
+    private FrameLayout mFragmentHolder;
 
     @Override
     protected int getLayoutResource() {
@@ -31,6 +34,7 @@ public class SampleRetrofitActivity extends RetrofitActivity {
     @Override
     protected void setViewReferences() {
         mResponseTextView = (TextView) findViewById(R.id.retrofit_result_text);
+        mFragmentHolder = (FrameLayout) findViewById(R.id.main_fragment);
     }
 
     @Override

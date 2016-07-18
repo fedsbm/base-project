@@ -37,6 +37,12 @@
                 tools:text="0.0.1" />
         </LinearLayout>
 
+
+        <FrameLayout
+            android:id="@+id/main_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+
         <org.uk.softs.sample.view.fontview.FontButton
             android:id="@+id/main_show_random_number_button"
             style="@style/Body2"

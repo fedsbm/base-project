@@ -3,18 +3,19 @@ package org.uk.softs.sample.activity.base;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
-import java.io.IOException;
-
 import org.uk.softs.sample.R;
 import org.uk.softs.sample.api.BaseRetrofit;
-import org.uk.softs.sample.api.SampleRetrofitService;
+import org.uk.softs.sample.api.RetrofitService;
+
+import java.io.IOException;
+
 import retrofit2.Retrofit;
 
 public abstract class RetrofitActivity extends BaseActivity {
 
     private Retrofit mRetrofit;
 
-    private SampleRetrofitService mRetrofitService;
+    private RetrofitService mRetrofitService;
 
     public void showErrorDialog(Throwable throwable) {
         showErrorDialog(throwable, false);
@@ -24,10 +25,10 @@ public abstract class RetrofitActivity extends BaseActivity {
     protected void initBaseValues() {
         super.initBaseValues();
         mRetrofit = new BaseRetrofit(this).getRetrofit();
-        mRetrofitService = mRetrofit.create(SampleRetrofitService.class);
+        mRetrofitService = mRetrofit.create(RetrofitService.class);
     }
 
-    public SampleRetrofitService getRetrofitService() {
+    public RetrofitService getRetrofitService() {
         return mRetrofitService;
     }
 

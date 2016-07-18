@@ -3,17 +3,20 @@ package org.uk.softs.sample.activity;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import org.uk.softs.sample.R;
+import org.uk.softs.sample.activity.base.RetrofitActivity;
+import org.uk.softs.sample.fragment.SampleRetrofitFragment;
 import org.uk.softs.sample.util.RandomNumberHelper;
-import org.uk.softs.sample.activity.base.BaseActivity;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends RetrofitActivity {
 
     private TextView mVersionValueTextView;
     private TextView mDevBuildMessageTextView;
@@ -40,7 +43,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void setupActivity(Bundle savedInstanceState) {
-
+        hideProgressBar();
         mVersionValueTextView.setText(getVersionName());
         if (getResources().getBoolean(R.bool.dev_build)) {
             mDevBuildMessageTextView.setVisibility(View.VISIBLE);
@@ -61,6 +64,15 @@ public class MainActivity extends BaseActivity {
                 launchRetrofitActivity();
             }
         });
+        setupFragment();
+    }
+
+    private void setupFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =
+                fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_fragment, new SampleRetrofitFragment());
+        fragmentTransaction.commit();
     }
 
     private void launchRetrofitActivity() {
@@ -68,7 +80,6 @@ public class MainActivity extends BaseActivity {
     }
 
     private String getVersionName() {
-
         String versionName;
 
         try {

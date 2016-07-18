@@ -12,14 +12,15 @@ package org.uk.softs.sample.api;
 //import retrofit.http.Query;
 
 
+import org.uk.softs.sample.model.api.SampleResponseData;
+
 import java.util.List;
 
-import org.uk.softs.sample.model.api.SampleResponseData;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public interface SampleRetrofitService {
+public interface RetrofitService {
 
     @GET("/posts")
     Call<List<SampleResponseData>> getExample(@Query("userId") int userId);
